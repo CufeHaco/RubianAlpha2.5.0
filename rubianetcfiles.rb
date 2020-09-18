@@ -5,7 +5,7 @@ begin
 			                    ]
 
 	def check_etc_install
-		check_etc_dir =Dir.exists?("#{Dir.home}/Desktop/Rubian/etc")
+		check_etc_dir =Dir.exists?("#{Dir.home}/Rubian/etc")
 			
 			if check_etc_dir == false
 			puts "Rubian etc Directory not found"
@@ -14,9 +14,9 @@ begin
 			@etc_installed = true
 			puts "Rubian etc Directory found"
 			
-	 file1  = File.exists?("#{Dir.home}/Desktop/Rubian/etc/#{@etc_file[0]}")
-	 file2  = File.exists?("#{Dir.home}/Desktop/Rubian/etc/#{@etc_file[1]}")
-	 file3  = File.exists?("#{Dir.home}/Desktop/Rubian/etc/#{@etc_file[2]}")
+	 file1  = File.exists?("#{Dir.home}/Rubian/etc/#{@etc_file[0]}")
+	 file2  = File.exists?("#{Dir.home}/Rubian/etc/#{@etc_file[1]}")
+	 file3  = File.exists?("#{Dir.home}/Rubian/etc/#{@etc_file[2]}")
 			if file1||file2||file3 == true
 			puts "Rubian etc files found"
 			@etc_files_installed = true
@@ -28,17 +28,17 @@ begin
 	def uninstall_etc
 	 
 	 
-	 File.delete("#{Dir.home}/Desktop/Rubian/etc/#{@etc_file[0]}") 
-	 File.delete("#{Dir.home}/Desktop/Rubian/etc/#{@etc_file[1]}") 
-	 File.delete("#{Dir.home}/Desktop/Rubian/etc/#{@etc_file[2]}") 
-	 Dir.rmdir("#{Dir.home}/Desktop/Rubian/etc")
+	 File.delete("#{Dir.home}/Rubian/etc/#{@etc_file[0]}") 
+	 File.delete("#{Dir.home}/Rubian/etc/#{@etc_file[1]}") 
+	 File.delete("#{Dir.home}/Rubian/etc/#{@etc_file[2]}") 
+	 Dir.rmdir("#{Dir.home}/Rubian/etc")
 	end			   
 
 
 	def install_etc
 	puts "Making etc Directory" ;sleep(1)
-	Dir.mkdir("#{Dir.home}/Desktop/Rubian/etc")
-	Dir.chdir("#{Dir.home}/Desktop/Rubian/etc")
+	Dir.mkdir("#{Dir.home}/Rubian/etc")
+	Dir.chdir("#{Dir.home}/Rubian/etc")
 	
  puts "Making #{@etc_file[0]}" ;sleep(1)
 file = File.new("#{@etc_file[0]}" , 'w')
