@@ -77,7 +77,7 @@ File.delete("#{Dir.home}/Rubian/bin/#{@bin_file[15]}")# if @file16 ==true
 File.delete("#{Dir.home}/Rubian/bin/#{@bin_file[16]}")# if @file17 ==true
 File.delete("#{Dir.home}/Rubian/bin/#{@bin_file[17]}")# if @file18 ==true
 File.delete("#{Dir.home}/Rubian/bin/#{@bin_file[18]}")# if @file19 ==true
-Dir.rmdir("#{Dir.home}/Rubian/bin")	 
+Dir.rmdir("#{Dir.home}/Rubian/bin") if @bin_installed == true
 end
 		
 		
