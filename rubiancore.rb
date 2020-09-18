@@ -20,8 +20,9 @@ file1  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[0]}")
 file2  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[1]}")
 file3  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[2]}")
 file4  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[3]}")
+file5  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[4]}")	
 
-	if file1||file2||file3||file4 == true
+	if file1||file2||file3||file4||file5 == true
 		puts "Rubian core file found"
 		end
 	end
@@ -34,6 +35,7 @@ File.delete("#{Dir.home}/Rubian/#{@rubian_file[0]}")
 File.delete("#{Dir.home}/Rubian/#{@rubian_file[1]}") 
 File.delete("#{Dir.home}/Rubian/#{@rubian_file[2]}") 
 File.delete("#{Dir.home}/Rubian/#{@rubian_file[3]}")
+File.delete("#{Dir.home}/Rubian/#{@rubian_file[4]}")
 Dir.rmdir("#{Dir.home}/Rubian")
 	end
 
@@ -299,7 +301,15 @@ Dir.chdir("/usr/share/applications")
 	
 puts "Making #{@rubian_file[4]}" ;sleep(1)
 file = File.new("#{@rubian_file[4]}" , 'w')
-file.puts(%q^
+file.puts(%q^Encoding=UTF-8
+Version=Beta 1.0
+Name=Rubian Alpha 2.5.0
+Comment=Rubian Shell
+Categories=Utility;Development;Network
+Type=Application
+Terminal=false
+Exec=ruby /home/#{`echo $USER`.chomp}/Rubian/rubian
+Icon= /home/#{`echo $USER`.chomp}/RubianAlpha2.5.0/icons/rubyicon.png
 
    
 				^) ; file.close
