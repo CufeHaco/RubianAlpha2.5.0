@@ -12,13 +12,13 @@ begin
 			'nano_cmd.rb'           , #9
 			'patch_notes_cmd.rb'    , #10
 			'ru_bin.rb'             , #11
-			'rubian_help.rb'        ,
-			'rubian_irb.rb'         ,
-			'rusb_cli_cmd.rb'       , 
-			'sudosu_cmd.rb'         , 
-			'sys_update_cmd.rb'     , 
-			'usr_id_cmd.rb'         , 
-			'version_cmd.rb'        , 
+			'rubian_help.rb'        , #12
+			'rubian_irb.rb'         , #13
+			'rusb_cli_cmd.rb'       , #14
+			'sudosu_cmd.rb'         , #15
+			'sys_update_cmd.rb'     , #16
+			'usr_id_cmd.rb'         , #17
+			'version_cmd.rb'        , #18
 							         ]
 							         
 def check_bin_install
