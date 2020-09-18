@@ -4,7 +4,8 @@ begin
 			    'rubian'              ,
 				'version.rb'	      ,				 
 				'LICENSE.txt'         ,					 
-				'updates.rb'          ,					   
+				'updates.rb'          ,
+	                        'rubian.desktop'      ,
 									   ]
 
 def check_core_install
@@ -289,6 +290,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.   
+				^) ; file.close
+				
+	end
+	
+
+Dir.chdir("/usr/share/applications")
+	
+puts "Making #{@rubian_file[4]}" ;sleep(1)
+file = File.new("#{@rubian_file[4]}" , 'w')
+file.puts(%q^
+
+   
 				^) ; file.close
 				
 	end
