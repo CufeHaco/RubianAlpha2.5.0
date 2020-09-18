@@ -1,17 +1,17 @@
 begin
 
-@bin_file = ['about_cmd.rb'       ,
-			'bash_shell_cmd.rb'     , 
-			'cd_cmd.rb'             , 
-			'clear_cmd.rb'          , 
-			'command_list_cmd.rb'   , 
-			'directory.rb'          ,
-			'gem_install_cmd.rb'    , 
-			'install_cmd.rb'        ,
-			'ls_cmd.rb'             , 
-			'nano_cmd.rb'           ,
-			'patch_notes_cmd.rb'    , 
-			'ru_bin.rb'             ,
+@bin_file = [           'about_cmd.rb'          , #0
+			'bash_shell_cmd.rb'     , #1
+			'cd_cmd.rb'             , #2
+			'clear_cmd.rb'          , #3
+			'command_list_cmd.rb'   , #4
+			'directory.rb'          , #5
+			'gem_install_cmd.rb'    , #6
+			'install_cmd.rb'        , #7
+			'ls_cmd.rb'             , #8
+			'nano_cmd.rb'           , #9
+			'patch_notes_cmd.rb'    , #10
+			'ru_bin.rb'             , #11
 			'rubian_help.rb'        ,
 			'rubian_irb.rb'         ,
 			'rusb_cli_cmd.rb'       , 
@@ -355,31 +355,107 @@ end
 puts "Making #{@bin_file[11]}" ;sleep(1)
 file = File.new("#{@bin_file[11]}" , 'w')
 file.puts(%q^#!/usr/bin/env ruby
-require 'colorize'
 
-def rubian_help
-		puts "Rubian Help file.".yellow
-puts " ".yellow
-puts "cmd_list: ".yellow + "list Rubian commands".green
-puts " ".yellow
-puts "Rubian uses Ruby syntax. ".yellow 
-puts "puts 'hello world!' ".green
-puts "p 'hello world!' ".green
-puts 'print "hello world! \n" '.green
-puts " ".yellow
-puts "Rubian has built in command methods, but also uses all ruby Classes, Modules, and methods. ".yellow
-puts "how to use $sudo ".yellow
-puts " ".yellow
-puts "$sudo.start! ".yellow + "starts sudo.  enters root when called".green
-puts "$sudo".red  + "[class].method ".green
-puts " example: $sudo[Kernal].system 'shutdown - h now' ".green
-puts " example: $sudo[Dir].chdir('/')".green
-puts "$sudo.stop! ".yellow  +  "stops sudo and returns to normal user".green
-puts " ".yellow
-puts "If you need to run kernel commands: ".yellow
-puts "Kernel.system 'shutdown -h now ".green
-puts "puts `ls -lh`.chomp ".green
-puts "For system commands you can use Kernel.system , system, or backticks ` ` ".yellow
+def rubian_bin
+ @ru_bin = Dir.new("/home/#{`echo $USER`.chomp}/Rubian/lib/bin")
+ end
+
+
+begin
+def load_rubian_bin(file)
+
+a = Dir.glob("/home/**/")
+a.each_with_index do |value ,index|
+b = File.exists?("#{value}#{file}")
+
+if b == true
+@dir_path = Dir.new("#{value}")
+@load_path = value + file
+
+#puts "Loading Rubian bin: " + @load_path
+#sleep(0.5)
+		end
+	end
+end
+
+
+bin_file = ['about_cmd.rb'       ,
+			'bash_shell_cmd.rb'     , 
+			'cd_cmd.rb'             , 
+			'clear_cmd.rb'          , 
+			'command_list_cmd.rb'   , 
+			'directory.rb'          ,
+			'gem_install_cmd.rb'    , 
+			'install_cmd.rb'        ,
+			'ls_cmd.rb'             , 
+			'nano_cmd.rb'           ,
+			'patch_notes_cmd.rb'    , 
+			'rubian_help.rb'        ,
+			'rubian_irb.rb'         ,
+			'rusb_cli_cmd.rb'       , 
+			'sudosu_cmd.rb'         , 
+			'sys_update_cmd.rb'     , 
+			'usr_id_cmd.rb'         , 
+			'version_cmd.rb'        , 
+							  ]
+
+load_rubian_bin bin_file[0]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[1]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[2]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[3]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[4]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[5]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[6]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[7]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[8]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[9]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[10]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[11]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[12]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[13]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[14]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[15]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[16]
+require "#{@load_path}"
+
+load_rubian_bin bin_file[17]
+require "#{@load_path}"
+
+end
+
+
 
 	end   
 				^) ; file.close
