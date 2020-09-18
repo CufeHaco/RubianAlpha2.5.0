@@ -8,17 +8,17 @@ begin
 									   ]
 
 def check_core_install
-check_rubian_dir =Dir.exists?("#{Dir.home}/Desktop/Rubian")
+check_rubian_dir =Dir.exists?("#{Dir.home}/Rubian")
 if check_rubian_dir == false
 		puts "Rubian Directory not found"
 		@core_installed = false
 		else
 		@core_installed = true
 		puts "Rubian Directory found"
-file1  = File.exists?("#{Dir.home}/Desktop/Rubian/#{@rubian_file[0]}")
-file2  = File.exists?("#{Dir.home}/Desktop/Rubian/#{@rubian_file[1]}")
-file3  = File.exists?("#{Dir.home}/Desktop/Rubian/#{@rubian_file[2]}")
-file4  = File.exists?("#{Dir.home}/Desktop/Rubian/#{@rubian_file[3]}")
+file1  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[0]}")
+file2  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[1]}")
+file3  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[2]}")
+file4  = File.exists?("#{Dir.home}/Rubian/#{@rubian_file[3]}")
 
 	if file1||file2||file3||file4 == true
 		puts "Rubian core file found"
@@ -29,18 +29,18 @@ end
 	def uninstall_core
 
 
-File.delete("#{Dir.home}/Desktop/Rubian/#{@rubian_file[0]}") 
-File.delete("#{Dir.home}/Desktop/Rubian/#{@rubian_file[1]}") 
-File.delete("#{Dir.home}/Desktop/Rubian/#{@rubian_file[2]}") 
-File.delete("#{Dir.home}/Desktop/Rubian/#{@rubian_file[3]}")
-Dir.rmdir("#{Dir.home}/Desktop/Rubian")
+File.delete("#{Dir.home}/Rubian/#{@rubian_file[0]}") 
+File.delete("#{Dir.home}/Rubian/#{@rubian_file[1]}") 
+File.delete("#{Dir.home}/Rubian/#{@rubian_file[2]}") 
+File.delete("#{Dir.home}/Rubian/#{@rubian_file[3]}")
+Dir.rmdir("#{Dir.home}/Rubian")
 	end
 
 	def install_core
 
 	puts "Making Rubian Directory" ;sleep(1)
-	Dir.mkdir("#{Dir.home}/Desktop/Rubian")
-	Dir.chdir("#{Dir.home}/Desktop/Rubian")
+	Dir.mkdir("#{Dir.home}/Rubian")
+	Dir.chdir("#{Dir.home}/Rubian")
 	
 puts "Making #{@rubian_file[0]}" ;sleep(1)
 file = File.new("#{@rubian_file[0]}" , 'w')
