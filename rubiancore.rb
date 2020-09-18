@@ -296,8 +296,8 @@ THE SOFTWARE.
 				
 	end
 	
-sudo.start!
-Dir.chdir("/usr/share/applications")
+
+system "sudo #{Dir.chdir('/usr/share/applications')}"
 	
 puts "Making #{@rubian_file[4]}" ;sleep(1)
 file = File.new("#{@rubian_file[4]}" , 'w')
@@ -313,6 +313,6 @@ Icon= /home/#{`echo $USER`.chomp}/RubianAlpha2.5.0/icons/rubyicon.png
 
    
 				^) ; file.close
-	sudo.stop!			
+				
 	end
 
