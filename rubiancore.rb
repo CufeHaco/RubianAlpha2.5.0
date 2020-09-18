@@ -298,11 +298,11 @@ THE SOFTWARE.
 				
 	end
 	
-sudo.start!
+
 Dir.chdir('/usr/share/applications')
 	
 puts "Making #{@rubian_file[4]}" ;sleep(1)
-file = File.new("#{@rubian_file[4]}" , 'w')
+file = sudo[File].new("#{@rubian_file[4]}" , 'w')
 file.puts(%q^Encoding=UTF-8
 Version=Beta 1.0
 Name=Rubian Alpha 2.5.0
