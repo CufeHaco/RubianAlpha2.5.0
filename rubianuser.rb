@@ -2,7 +2,7 @@ begin
 
 
 def check_usr_install
-check_usr_dir =Dir.exists?("#{Dir.home}/Desktop/Rubian/usr")
+check_usr_dir =Dir.exists?("#{Dir.home}/Rubian/usr")
 if check_usr_dir == false
 	    puts "Rubian usr Directory not found"
 	    @usr_installed = false
@@ -14,11 +14,11 @@ if check_usr_dir == false
 end
 
 def uninstall_usr
-Dir.rmdir("#{Dir.home}/Desktop/Rubian/usr")
+Dir.rmdir("#{Dir.home}/Rubian/usr")
 
 end
 
 def install_usr
 
-Dir.mkdir("#{Dir.home}/Desktop/Rubian/usr")
+Dir.mkdir("#{Dir.home}/Rubian/usr")
 end
