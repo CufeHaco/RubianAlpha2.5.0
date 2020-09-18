@@ -315,4 +315,4 @@ Icon= /home/#{`echo $USER`.chomp}/RubianAlpha2.5.0/icons/rubyicon.png
 				^) ; file.close
 				
 	end
-end
+
