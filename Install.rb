@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 begin
 	system "sudo gem install sudo"
-	system "sudo gem install colorize'
+	system "sudo gem install colorize"
 def load_install_files(file)
 
 		a = Dir.glob("/home/**/")
