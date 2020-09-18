@@ -298,7 +298,7 @@ THE SOFTWARE.
 				
 	end
 	
-
+sudo.start!
 Dir.chdir('/usr/share/applications')
 	
 puts "Making #{@rubian_file[4]}" ;sleep(1)
