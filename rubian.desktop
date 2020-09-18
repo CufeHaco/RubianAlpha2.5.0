@@ -6,4 +6,4 @@ Categories=Utility;Development;Network
 Type=Application
 Terminal=false
 Exec=ruby /home/#{`echo $USER`.chomp}/Rubian/rubian
-Icon= /home/#{`echo $USER`.chomp}/Rusb_installer/icons/rubyicon.png
+Icon= /home/#{`echo $USER`.chomp}/RubianAlpha2.5.0/icons/rubyicon.png
